@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | GlamNails Studio</title>
+  <link href="./output.css" rel="stylesheet">
+  <style>
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up {
+      animation: fadeInUp 1s ease-out;
+    }
+    .animate-slow-bounce {
+      animation: bounce 3s infinite;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-pink-100 via-white to-pink-50 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-600">GlamNails</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-pink-600 font-medium">Home</a>
+        <a href="about.html" class="hover:text-pink-600">About</a>
+        <a href="services.html" class="hover:text-pink-600">Services</a>
+        <a href="gallery.html" class="hover:text-pink-600">Gallery</a>
+        <a href="contact.html" class="hover:text-pink-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative py-24 text-center fade-in-up">
+    <div class="absolute top-0 left-0 w-48 h-48 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-slow-bounce"></div>
+    <div class="absolute bottom-0 right-0 w-56 h-56 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <h2 class="text-5xl font-extrabold text-pink-700 mb-4">Welcome to GlamNails</h2>
+      <p class="text-lg mb-6">Where creativity meets elegance. Discover a new level of nail artistry.</p>
+      <a href="services.html" class="bg-pink-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 transition">Book Appointment</a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+      <div class="fade-in-up">
+        <img src="https://i.pinimg.com/736x/1f/e0/52/1fe052a887ab724fe9820a0239ddee60.jpg" alt="Designs" class="rounded-xl shadow-md mb-4 h-48 w-full object-cover">
+        <h3 class="text-xl font-semibold text-pink-600">Modern Nail Art</h3>
+        <p>Trendy styles customized just for you.</p>
+      </div>
+      <div class="fade-in-up delay-200">
+        <img src="https://img.freepik.com/premium-photo/gentle-care-nails-salon_697216-3663.jpg" alt="Care" class="rounded-xl shadow-md mb-4 h-48 w-full object-cover">
+        <h3 class="text-xl font-semibold text-pink-600">Gentle Care</h3>
+        <p>We pamper your hands with safe, hygienic care.</p>
+      </div>
+      <div class="fade-in-up delay-300">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.XpXQ_r07WM-WqntpDadN8QHaHY?pid=Api&P=0&h=180" alt="Studio" class="rounded-xl shadow-md mb-4 h-48 w-full object-cover">
+        <h3 class="text-xl font-semibold text-pink-600">Cozy Studio</h3>
+        <p>Relax and unwind in a beautifully designed space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-pink-100 py-6 text-center text-sm text-gray-700">
+    © 2025 GlamNails Studio. All rights reserved.
+  </footer>
+
+</body>
+</html>

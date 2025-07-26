@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services | GlamNails Studio</title>
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #fce7f3, #fdf2f8, #fce7f3);
+      overflow-x: hidden;
+    }
+    .blurred-circle-1 {
+      position: fixed;
+      top: -4rem;
+      left: -4rem;
+      width: 12rem;
+      height: 12rem;
+      background: #fbb6ce;
+      border-radius: 9999px;
+      filter: blur(4rem);
+      opacity: 0.3;
+      animation: slowBounce 3s infinite;
+      mix-blend-mode: multiply;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .blurred-circle-2 {
+      position: fixed;
+      bottom: -5rem;
+      right: -5rem;
+      width: 14rem;
+      height: 14rem;
+      background: #f472b6;
+      border-radius: 9999px;
+      filter: blur(5rem);
+      opacity: 0.2;
+      animation: pulse 4s infinite;
+      mix-blend-mode: multiply;
+      z-index: 0;
+      pointer-events: none;
+    }
+    @keyframes slowBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(20px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.4; }
+    }
+    main, header, footer, section {
+      position: relative;
+      z-index: 10;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 30px rgba(219, 39, 119, 0.15);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 35px 60px rgba(219, 39, 119, 0.3);
+    }
+    .icon-svg {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1.25rem;
+      fill: #ec4899; 
+      filter: drop-shadow(0 2px 4px rgba(236,72,153,0.3));
+      transition: fill 0.3s ease;
+    }
+    .service-card:hover .icon-svg {
+      fill: #db2777;
+      filter: drop-shadow(0 4px 8px rgba(219,39,119,0.4));
+    }
+
+    .btn-book {
+      margin-top: 1.5rem;
+      background-color: #ec4899;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 3rem;
+      border-radius: 9999px;
+      box-shadow: 0 8px 20px rgba(236,72,153,0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-book:hover {
+      background-color: #db2777;
+      box-shadow: 0 12px 30px rgba(219,39,119,0.4);
+    }
+
+    #bookingModal {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blurred-circle-1"></div>
+  <div class="blurred-circle-2"></div>
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-600 select-none cursor-default">GlamNails</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:text-pink-600 transition">Home</a>
+        <a href="about.html" class="hover:text-pink-600 transition">About</a>
+        <a href="services.html" class="text-pink-600 font-medium">Services</a>
+        <a href="gallery.html" class="hover:text-pink-600 transition">Gallery</a>
+        <a href="contact.html" class="hover:text-pink-600 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section class="py-24 max-w-7xl mx-auto px-6">
+    <h2 class="text-5xl font-extrabold text-pink-700 text-center mb-20 tracking-wide drop-shadow-lg">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-12">
+
+      <!-- Card 1 -->
+      <div data-aos="fade-up" data-aos-delay="100" class="service-card">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M32 2C17.664 2 6 13.664 6 28c0 13.204 9.623 24.026 22.015 25.887a1.498 1.498 0 0 0 1.97-1.656C29.635 47.117 27 39.425 27 32c0-8.284 6.716-15 15-15 4.956 0 9.305 2.62 11.68 6.587a1.5 1.5 0 0 0 2.436-1.684C53.42 15.712 43.599 8 32 8z"/></svg>
+        <h3 class="text-2xl font-bold mb-3 text-pink-600">Gel Nails</h3>
+        <p class="text-gray-600 mb-6">Durable, shiny, and elegant gel nails that last up to 3 weeks.</p>
+        <span class="text-pink-700 font-extrabold text-3xl">$45</span>
+        <button class="btn-book book-btn">Book Now</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div data-aos="fade-up" data-aos-delay="200" class="service-card">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M16 12h32v40H16zM20 16h24v32H20z"/></svg>
+        <h3 class="text-2xl font-bold mb-3 text-pink-600">Acrylic Extensions</h3>
+        <p class="text-gray-600 mb-6">Get extra length and strength with beautifully sculpted acrylics.</p>
+        <span class="text-pink-700 font-extrabold text-3xl">$60</span>
+        <button class="btn-book book-btn">Book Now</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div data-aos="fade-up" data-aos-delay="300" class="service-card">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="28" stroke="#ec4899" stroke-width="4" fill="none"/><path d="M32 12v20l16 12" stroke="#ec4899" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="text-2xl font-bold mb-3 text-pink-600">Nail Art</h3>
+        <p class="text-gray-600 mb-6">Customized hand-painted art to match your mood and outfit.</p>
+        <span class="text-pink-700 font-extrabold text-3xl">$35+</span>
+        <button class="btn-book book-btn">Book Now</button>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-xl shadow-lg max-w-md w-11/12 p-8 text-center relative">
+      <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-400 hover:text-pink-600 text-3xl font-bold leading-none">&times;</button>
+      <h3 class="text-3xl font-bold text-pink-600 mb-4">Booking Confirmed!</h3>
+      <p class="text-gray-700 mb-6">Thank you for choosing GlamNails Studio. We will contact you shortly to confirm your appointment.</p>
+      <button id="modalCloseBtn" class="bg-pink-600 text-white px-12 py-3 rounded-full font-semibold hover:bg-pink-700 transition">Close</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-pink-100 py-6 mt-16 text-center text-gray-700 text-sm select-none relative z-10">
+    © 2025 GlamNails Studio. All rights reserved.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      easing: 'ease-in-out',
+      once: true,
+    });
+
+    const modal = document.getElementById('bookingModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const bookButtons = document.querySelectorAll('.book-btn');
+
+    bookButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+    modalCloseBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', (e) => {
+      if(e.target === modal){
+        modal.classList.add('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>
+

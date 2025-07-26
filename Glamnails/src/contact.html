@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | GlamNails Studio</title>
+  <link href="./output.css" rel="stylesheet">
+  <style>
+    .blurred-circle-1 {
+      position: absolute;
+      top: -4rem;
+      left: -4rem;
+      width: 12rem;
+      height: 12rem;
+      background: #fbb6ce;
+      border-radius: 9999px;
+      filter: blur(4rem);
+      opacity: 0.3;
+      animation: slowBounce 3s infinite;
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
+    .blurred-circle-2 {
+      position: absolute;
+      bottom: -5rem;
+      right: -5rem;
+      width: 14rem;
+      height: 14rem;
+      background: #f472b6;
+      border-radius: 9999px;
+      filter: blur(5rem);
+      opacity: 0.2;
+      animation: pulse 4s infinite;
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
+
+    @keyframes slowBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(20px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.4; }
+    }
+  </style>
+</head>
+<body class="relative bg-gradient-to-b from-pink-100 via-white to-pink-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+  <div class="blurred-circle-1"></div>
+  <div class="blurred-circle-2"></div>
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-600">GlamNails</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:text-pink-600">Home</a>
+        <a href="about.html" class="hover:text-pink-600">About</a>
+        <a href="services.html" class="hover:text-pink-600">Services</a>
+        <a href="gallery.html" class="hover:text-pink-600">Gallery</a>
+        <a href="contact.html" class="text-pink-600 font-medium">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative py-20 max-w-2xl mx-auto px-4 z-10 w-full">
+    <h2 class="text-4xl font-bold text-pink-700 text-center mb-8">Contact Us</h2>
+    <form id="contactForm" class="space-y-4" action="#" method="POST">
+      <input type="text" placeholder="Full Name" required class="w-full px-4 py-2 border border-pink-300 rounded focus:outline-pink-500 focus:ring-2 focus:ring-pink-300">
+      <input type="email" placeholder="Email Address" required class="w-full px-4 py-2 border border-pink-300 rounded focus:outline-pink-500 focus:ring-2 focus:ring-pink-300">
+      <textarea placeholder="Your Message" rows="5" required class="w-full px-4 py-2 border border-pink-300 rounded focus:outline-pink-500 focus:ring-2 focus:ring-pink-300"></textarea>
+      <button type="submit" class="bg-pink-600 text-white px-6 py-3 rounded hover:bg-pink-700 transition">Send Message</button>
+
+      <p id="successMessage" class="hidden text-green-600 font-medium text-center">Your message has been sent successfully!</p>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-pink-100 py-6 mt-auto text-center text-sm text-gray-700 z-10">
+    © 2025 GlamNails Studio. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      successMessage.classList.remove('hidden');
+
+      setTimeout(() => {
+        successMessage.classList.add('hidden');
+      }, 7000);
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
